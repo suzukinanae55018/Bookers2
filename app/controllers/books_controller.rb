@@ -11,9 +11,10 @@ class BooksController < ApplicationController
      flash[:notice] = "Book was successfully created."
      redirect_to book_path(@book)
    else
+     @books = Book.all
      @user = current_user
-     render 'homes/about'
-    # 後で変える
+     render :index
+    # @books = Book.allがrenderに必要
    end
   end
 
