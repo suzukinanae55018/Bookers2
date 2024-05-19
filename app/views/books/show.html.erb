@@ -1,2 +1,65 @@
 <h1>Books#show</h1>
-<p>Find me in app/views/books/show.html.erb</p>
+<h2>User info</h2>
+<%= image_tag @user.get_profile_image(100, 100) %>
+
+<table>
+  <tbody>
+    <tr>
+      <th>name</th>
+      <th><%= @user.name %></th>
+    </tr>
+
+    <tr>
+      <th>introduction</th>
+      <tr><%= @user.introduction %></tr>
+    </tr>
+  </tbody>
+</table>
+
+<%= link_to edit_user_path(@user) do %>
+  <i class="fa-solid fa-user-gear"></i>
+<% end %>
+
+<h2>New book</h2>
+  <div>
+    <%= form_with model: @book do |f| %>
+    <div>
+      <label>Title</label><br/>
+      <%= f.text_field :title %>
+    </div>
+
+    <div>
+        <label>Opinion</label><br/>
+        <%= f.text_area :body %>
+    </div>
+
+    <span>
+        <%= f.submit 'Create Book' %>
+    </span>
+  </div>
+<% end %>
+
+<h2>Book detail</h2>
+<table>
+  <tbody>
+      <tr>
+        <td>
+          <%= link_to user_path(@book) do %>
+            <%= image_tag @book.user.get_profile_image(100, 100) %><br/>
+            <%= @book.user.name %>
+          <% end %>
+          </td>
+          <td><%= link_to @book.title, book_path(@book.id) %></td>
+          <td><%= @book.body %></td>
+
+        <% if @book.user == current_user %>
+         <%= link_to "Edit", edit_book_path(@book) %>
+        <% end %>
+
+        <% if @book.user == current_user %>
+         <%= link_to "Destroy", book_path(@book), method: :delete, data: { confirm: "本当に削除しますか？" } %>
+        <% end %>
+
+      </tr>
+  </tbody>
+</table>
