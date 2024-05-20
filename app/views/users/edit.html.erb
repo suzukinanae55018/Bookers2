@@ -1,3 +1,20 @@
+<div>
+<% if @user.errors.any? %>
+ <% if @user.errors.count > 1 %>
+  <%= @user.errors.count %>errors prohibited this book from being saved:
+<% else %>
+  <%= @user.errors.count %>error prohibited this book from being saved:
+<% end %>
+
+  <ul>
+    <% @user.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+</div>
+
+
 <h2>User info</h2>
 <%= form_with model: @user do |f| %>
   <label for="inputName">Name</label><br/>

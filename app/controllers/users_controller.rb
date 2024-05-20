@@ -7,7 +7,7 @@ class UsersController < ApplicationController
     @book = Book.new(book_params)
     @book.user_id = current_user.id
    if @book.save
-     flash[:notice] = "Book was successfully created."
+     flash[:notice] = "You have created book successfully."
      redirect_to book_path(@book)
    else
      @books = Book.all
@@ -33,8 +33,13 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-    @user.update(user_params)
-    redirect_to user_path(@user.id)
+    if@user.update(user_params)
+      flash[:notice] = "You have updated user successfully."
+      redirect_to user_path(@user.id)
+    else
+      flash[:notice]
+      render :edit
+    end
   end
 
   def user_params
