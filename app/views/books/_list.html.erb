@@ -1,39 +1,46 @@
-<h2>User info</h2>
-<%= image_tag user.get_profile_image(100, 100) %>
 
-<table>
-  <tbody>
-    <tr>
-      <th>name</th>
-      <th><%= user.name %></th>
-    </tr>
+    <div class='col-md-3'>
+      <h2>User info</h2>
 
-    <tr>
-      <th>introduction</th>
-      <th><%= user.introduction %></th>
-    </tr>
-  </tbody>
-</table>
+      <table class='table'>
+          <tr>
+            <%= image_tag user.get_profile_image(100, 100) %>
+          </tr>
+          <tr>
+            <th>name</th>
+            <th><%= user.name %></th>
+          </tr>
 
-<%= link_to edit_user_path(user) do %>
-  <i class="fa-solid fa-user-gear"></i>
-<% end %>
+          <tr>
+            <th>introduction</th>
+            <th><%= user.introduction %></th>
+          </tr>
+      </table>
 
-<h2>New book</h2>
-  <div>
-    <%= form_with model: book do |f| %>
-    <div>
-      <label>Title</label><br/>
-      <%= f.text_field :title %>
+      <div class='row'>
+        <div class="btn btn-outline-secondary btn-block">
+      <%= link_to edit_user_path(user) do %>
+        <i class="fa-solid fa-user-gear"></i>
+        </div>
+      <% end %>
+      </div>
+
+      <h2>New book</h2>
+        <div>
+          <%= form_with model: book do |f| %>
+          <div>
+            <label>Title</label><br/>
+            <%= f.text_field :title %>
+          </div>
+
+          <div>
+              <label>Opinion</label><br/>
+              <%= f.text_area :body %>
+          </div>
+
+          <span>
+              <%= f.submit 'Create Book', class: "btn btn-sm btn-success" %>
+          </span>
+        </div>
+      <% end %>
     </div>
-
-    <div>
-        <label>Opinion</label><br/>
-        <%= f.text_area :body %>
-    </div>
-
-    <span>
-        <%= f.submit 'Create Book' %>
-    </span>
-  </div>
-<% end %>
