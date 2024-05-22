@@ -17,27 +17,27 @@
   </table>
 
   <div class='row'>
-    <div class="btn btn-outline-secondary btn-block">
-  <%= link_to edit_user_path(user) do %>
+  <%= link_to edit_user_path(user), class: "col-12" do %>
+    <div class="btn btn-outline-secondary btn-block mt-4">
     <i class="fa-solid fa-user-gear"></i>
     </div>
   <% end %>
   </div>
 
-  <h2>New book</h2>
+  <h2 class="mt-3">New book</h2>
     <div>
       <%= form_with model: book do |f| %>
-      <div>
+      <div class="form-group">
         <label>Title</label><br/>
         <%= f.text_field :title, class: "form-control" %>
       </div>
 
-      <div>
+      <div  class="form-group">
           <label>Opinion</label><br/>
           <%= f.text_area :body, class: "form-control" %>
       </div>
 
-      <span>
+      <span class="form-group">
           <%= f.submit 'Create Book', class: "btn btn-sm btn-success" %>
       </span>
     </div>

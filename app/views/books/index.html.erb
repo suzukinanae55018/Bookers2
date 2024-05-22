@@ -1,9 +1,10 @@
+<p id="notice"></p>
 <div>
 <% if @book.errors.any? %>
  <% if @book.errors.count > 1 %>
-  <%= @book.errors.count %>errors prohibited this book from being saved:
+   <p class="h3"><%= @book.errors.count %>errors prohibited this book from being saved:</p>
 <% else %>
-  <%= @book.errors.count %>error prohibited this book from being saved:
+   <p class="h3"><%= @book.errors.count %>error prohibited this book from being saved:</p>
 <% end %>
 
   <ul>
