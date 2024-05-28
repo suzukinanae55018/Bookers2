@@ -29,7 +29,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @books = @user.books
   end
-
+  
   def edit
     is_matching_login_user
     @user = User.find(params[:id])
@@ -59,5 +59,4 @@ private
       redirect_to user_path(current_user.id)
     end
    end
-
 end
