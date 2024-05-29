@@ -13,8 +13,10 @@
 
 
   <body>
-    <%= render 'layouts/header' %>
-    <%= render 'searches/search' %>
+    <div class="text-center">
+      <%= render 'layouts/header' %>
+      <%= render 'searches/search' %>
+    </div>
     <main>
       <% flash.each do |message_type, message| %>
       <div class="flash-message <%= message_type %>"><%= message %></div>
