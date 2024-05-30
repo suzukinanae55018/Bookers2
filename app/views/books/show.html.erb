@@ -19,8 +19,8 @@
               <td><%= @book.body %></td>
 
 <!--いいね機能-->
-              <td>
-                <%= render 'favorites/favorites', book: @book %>
+              <td id="favorite_buttons_<%= @book.id %>">
+                <%= render 'favorites/favorite-btn', book: @book %>
               </td>
 
               <% if @book.user == current_user %>
