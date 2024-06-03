@@ -3,6 +3,7 @@ class Book < ApplicationRecord
   has_one_attached :image
   belongs_to :user
   has_many :favorites, dependent: :destroy
+  has_many :notifications, as: :notifiable, dependent: :destroy
   has_many :book_comments, dependent: :destroy
 
   validates :title, presence: true
@@ -11,6 +12,13 @@ class Book < ApplicationRecord
   def favorited_by?(user)
     favorites.exists?(user_id: user.id)
   end
+
+  after_create do
+    user.followers.each do |follower|
+      notifications.create(user_id: follower.id)
+    end
+  end
+
   def self.looks(search, word)
     if search == "perfect_match"
       @book = Book.where("title LIKE?","#{word}")
