@@ -42,6 +42,18 @@ class UsersController < ApplicationController
 
     @ratio = (@today_post_count.to_f / @yesterday_post_count.to_f) * 100
     @weekly_ratio = ((@weekly_post_count.to_f / @last_weekly_post_count.to_f) * 100).to_i.to_s + "%"
+
+    @dates = []
+    @posts_counts = []
+
+    7.times do |i|
+      date = Date.today - i.days
+      days_ago = (Date.today - date).to_i
+      formatted_date = "#{days_ago}日前"
+      @dates << formatted_date
+      post_count = @user.books.where("DATE(created_at) = ?", date).count
+      @posts_counts << post_count
+    end
   end
 
   def edit

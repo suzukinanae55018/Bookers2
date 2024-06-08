@@ -63,6 +63,23 @@
     　　    </tr>
     　　　</tbody>
     　</table>
+
+    　<table class="table table-bordered">
+      <h4>7日間分の投稿数</h4>
+        <tbody>
+          <tr>
+            <% @dates.reverse.each do |date| %>
+              <% formatted_date = (date == "0日前" ? "今日" : date) %>
+              <td><%= formatted_date %></td>
+            <% end %>
+          </tr>
+          <tr>
+            <% @posts_counts.reverse.each do |count| %>
+              <td><%= count %></td>
+            <% end %>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
 </div>
