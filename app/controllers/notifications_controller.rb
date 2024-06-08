@@ -1,5 +1,5 @@
 class NotificationsController < ApplicationController
-   before_action :authenticate_user!
+  before_action :authenticate_user!
 
   def update
     notification = current_user.notifications.find(params[:id])

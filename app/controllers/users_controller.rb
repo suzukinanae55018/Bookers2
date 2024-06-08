@@ -9,14 +9,14 @@ class UsersController < ApplicationController
   def create
     @book = Book.new(book_params)
     @book.user_id = current_user.id
-   if @book.save
-     flash[:notice] = "You have created book successfully."
-     redirect_to book_path(@book)
-   else
-     @books = Book.all
-     @user = current_user
-     render :index
-   end
+    if @book.save
+      flash[:notice] = "You have created book successfully."
+      redirect_to book_path(@book)
+    else
+      @books = Book.all
+      @user = current_user
+      render :index
+    end
   end
 
   def index
@@ -39,7 +39,7 @@ class UsersController < ApplicationController
   def update
     is_matching_login_user
     @user = User.find(params[:id])
-    if@user.update(user_params)
+    if @user.update(user_params)
       flash[:notice] = "You have updated user successfully."
       redirect_to user_path(@user.id)
     else
@@ -49,22 +49,21 @@ class UsersController < ApplicationController
   end
 
 private
-
   def user_params
     params.require(:user).permit(:name, :introduction, :profile_image)
   end
 
-   def is_matching_login_user
+  def is_matching_login_user
     user = User.find(params[:id])
     unless user.id == current_user.id
       redirect_to user_path(current_user.id)
     end
-   end
+  end
 
-    def ensure_guest_user
-      @user = User.find(params[:id])
-      if @user.email == "guest@example.com"
-        redirect_to user_path(current_user) , notice: 'ゲストユーザーはプロフィール編集画面へ遷移できません。'
-      end
+  def ensure_guest_user
+    @user = User.find(params[:id])
+    if @user.email == "guest@example.com"
+      redirect_to user_path(current_user), notice: "ゲストユーザーはプロフィール編集画面へ遷移できません。"
     end
+  end
 end
