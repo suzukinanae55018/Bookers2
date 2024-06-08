@@ -29,6 +29,19 @@ class UsersController < ApplicationController
     @book = Book.new
     @user = User.find(params[:id])
     @books = @user.books
+    @today_post_count = @user.books.where("created_at >= ?", Time.zone.now.beginning_of_day).count
+    @yesterday_post_count = @user.books.where(created_at: Date.yesterday.all_day).count
+
+    end_of_week = Date.today.beginning_of_day # 本日の開始時間を終点に指定する
+    start_of_week = end_of_week - 6.days # 1週間前の日付を起点にする
+    @weekly_post_count = @user.books.where(created_at: start_of_week..end_of_week).count
+
+    last_week_end = Date.today.beginning_of_day - 1.week # 先週の終了日を取得
+    last_week_start = last_week_end - 6.days # 先週の開始日を取得
+    @last_weekly_post_count = @user.books.where(created_at: last_week_start..last_week_end).count
+
+    @ratio = (@today_post_count.to_f / @yesterday_post_count.to_f) * 100
+    @weekly_ratio = ((@weekly_post_count.to_f / @last_weekly_post_count.to_f) * 100).to_i.to_s + "%"
   end
 
   def edit

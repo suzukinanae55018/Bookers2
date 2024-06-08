@@ -34,6 +34,35 @@
           <% end %>
         </tbody>
       </table>
+      <table class="table table-bordered">
+        <tbody>
+          <tr>
+            <th>前日の投稿数</th>
+    　　   　  <th>今日の投稿数</th>
+    　　   　  <th>前日比</th>
+    　　 　  </tr>
+    　　 　  <tr>
+            <td><%= @yesterday_post_count %></td>
+    　　　     <td><%= @today_post_count %></td>
+    　　　     <td><%= @ratio %></td>
+    　　 　  </tr>
+    　　　</tbody>
+　　　</table>
+
+      <table class="table table-bordered">
+    　  <tbody>
+          <tr>
+        　　  <th>今週の合計</th>
+        　　　<th>先週の合計</th>
+        　　  <th>前週比</th>
+        　</tr>
+        　<tr>
+      　　　   <td><%= @weekly_post_count %></td>
+      　　    <td><%= @last_weekly_post_count %></td>
+            <td><%= @weekly_ratio %></td>
+    　　    </tr>
+    　　　</tbody>
+    　</table>
     </div>
   </div>
 </div>
