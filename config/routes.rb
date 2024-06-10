@@ -7,6 +7,8 @@ Rails.application.routes.draw do
 
   resources :notifications, only: [:update]
 
+  resources :groups, only: [:new, :index, :show, :create, :edit, :update]
+
   resources :books, only: [:new, :create, :index, :show, :edit, :destroy, :update] do
     resources :book_comments, only: [:create, :destroy]
     resource :favorite, only: [:create, :destroy]

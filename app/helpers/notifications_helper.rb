@@ -6,5 +6,5 @@ module NotificationsHelper
     else
       "投稿した#{notification.notifiable.book.title}が#{notification.notifiable.user.name}さんにいいねされました"
     end
- end
+  end
 end
