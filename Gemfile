@@ -67,3 +67,5 @@ gem "net-smtp"
 gem "jquery-rails"
 
 gem 'dotenv-rails'
+
+gem 'kaminari','~> 1.2.1'
