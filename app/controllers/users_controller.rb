@@ -40,8 +40,17 @@ class UsersController < ApplicationController
     last_week_start = last_week_end - 6.days # 先週の開始日を取得
     @last_weekly_post_count = @user.books.where(created_at: last_week_start..last_week_end).count
 
-    @ratio = (@today_post_count.to_f / @yesterday_post_count.to_f) * 100
-    @weekly_ratio = ((@weekly_post_count.to_f / @last_weekly_post_count.to_f) * 100).to_i.to_s + "%"
+    if @yesterday_post_count != 0
+      @ratio = (@today_post_count.to_f / @yesterday_post_count.to_f) * 100
+    else
+      @ratio = 0
+    end
+    
+    if @last_weekly_post_count != 0
+      @weekly_ratio = ((@weekly_post_count.to_f / @last_weekly_post_count.to_f) * 100).to_i.to_s + "%"
+    else
+      @weekly_ratio = "0%"
+    end
 
     @dates = []
     @posts_counts = []
