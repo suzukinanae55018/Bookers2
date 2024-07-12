@@ -39,7 +39,7 @@ class BooksController < ApplicationController
   end
 
   def update
-    is_matching_login_user
+  
     @book = Book.find(params[:id])
     if @book.update(book_params)
       flash[:notice] = "Book was successfully updated."
@@ -51,7 +51,7 @@ class BooksController < ApplicationController
   end
 
   def destroy
-    is_matching_login_user
+  
     @book = Book.find(params[:id])
     @book.destroy
     redirect_to books_path
