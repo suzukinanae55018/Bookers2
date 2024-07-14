@@ -44,7 +44,7 @@ class GroupsController < ApplicationController
     def group_params
       params.require(:group).permit(:name, :introduction, :group_image)
     end
-
+# グループを作成した人だけ編集可能にする
     def ensure_correct_user
       @group = Group.find(params[:id])
       unless @group.owner_id == current_user.id
