@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root to: "homes#top"
   devise_for :users
-# 検索一覧に飛べる
+  # 検索一覧に飛べる
   get "home/about" => "homes#about", as: :about
   get "search" => "searches#search"
 

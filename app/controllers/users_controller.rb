@@ -45,7 +45,7 @@ class UsersController < ApplicationController
     else
       @ratio = 0
     end
-    
+
     if @last_weekly_post_count != 0
       @weekly_ratio = ((@weekly_post_count.to_f / @last_weekly_post_count.to_f) * 100).to_i.to_s + "%"
     else
@@ -82,17 +82,17 @@ class UsersController < ApplicationController
     end
   end
 
-   def search
-      @user = User.find(params[:user_id])
-      @books = @user.books
-      @book = Book.new
-      if params[:created_at] == ""
-        @search_book = "日付を選択してください"
-      else
-        create_at = params[:created_at]
-        @search_book = @books.where(['created_at LIKE ? ', "#{create_at}%"]).count
-      end
-   end
+  def search
+    @user = User.find(params[:user_id])
+    @books = @user.books
+    @book = Book.new
+    if params[:created_at] == ""
+      @search_book = "日付を選択してください"
+    else
+      create_at = params[:created_at]
+      @search_book = @books.where(["created_at LIKE ? ", "#{create_at}%"]).count
+    end
+  end
 
 private
   def user_params

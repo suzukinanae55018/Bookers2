@@ -1,6 +1,6 @@
 class SearchesController < ApplicationController
   before_action :authenticate_user!
-# ログイン状態でしか使えない
+  # ログイン状態でしか使えない
   def search
     @range = params[:range]
 
