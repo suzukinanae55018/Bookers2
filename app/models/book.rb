@@ -9,7 +9,11 @@ class Book < ApplicationRecord
   validates :body, presence: true, length: { maximum: 200 }
 
   def favorited_by?(user)
-    favorites.exists?(user_id: user.id)
+    if user.present?
+      favorites.exists?(user_id: user.id)
+    else
+      false
+    end
   end
 
   after_create do
