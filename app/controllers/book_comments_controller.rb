@@ -4,6 +4,7 @@ class BookCommentsController < ApplicationController
     @comment = current_user.book_comments.new(book_comment_params)
     @comment.book_id = book.id
     @comment.save
+    # 外部キーのbook_idにはbookのidを入れる
     # redirect_back(fallback_location: root_path)
     # redirect_to request.referer
   end
