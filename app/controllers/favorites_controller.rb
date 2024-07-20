@@ -4,6 +4,7 @@ class FavoritesController < ApplicationController
     favorite = current_user.favorites.new(book_id: @book.id)
     favorite.save
     # redirect_back(fallback_location: root_path)
+    # 非同期の時はリダイレクト先は要らない
   end
 
   def destroy
