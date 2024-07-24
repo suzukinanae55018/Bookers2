@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class SearchesController < ApplicationController
   before_action :authenticate_user!
   # ログイン状態でしか使えない,rangeはviewで作ったカラム

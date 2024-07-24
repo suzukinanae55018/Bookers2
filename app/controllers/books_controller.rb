@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class BooksController < ApplicationController
   before_action :is_matching_login_user, only: [:edit, :update, :destroy]
 

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ApplicationController < ActionController::Base
   # トップ・アバウトページのみ許可
   before_action :authenticate_user!, except: [:top, :about]
@@ -10,7 +12,8 @@ class ApplicationController < ActionController::Base
   def after_sign_out_path_for(resource)
     root_path
   end
-# emailを許可
+  # emailを許可
+
   protected
     def configure_permitted_parameters
       devise_parameter_sanitizer.permit(:sign_up, keys: [:email])

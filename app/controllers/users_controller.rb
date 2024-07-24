@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class UsersController < ApplicationController
   before_action :is_matching_login_user, only: [:edit, :update]
   before_action :ensure_guest_user, only: [:edit]

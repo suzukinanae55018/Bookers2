@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CategoryFormatter < RSpec::Core::Formatters::DocumentationFormatter
   RSpec::Core::Formatters.register self, :example_passed, :example_failed, :dump_summary
 
