@@ -11,7 +11,6 @@ class BookCommentsController < ApplicationController
     # redirect_to request.referer
   end
 
-
   def destroy
     # book = BookComment.find(params[:book_id])
     # comment = current_user.book_comments.find_by(book_id: book.id)←一致していない
