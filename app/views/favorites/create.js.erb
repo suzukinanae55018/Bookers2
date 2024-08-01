@@ -1,1 +1,3 @@
-$('#favorite_buttons_<%= @book.id %>').html("<%= j(render "favorites/favorite-btn", book: @book) %>");
+setTimeout(function() {
+  $('#favorite_buttons_<%= @book.id %>').html("<%= j(render "favorites/favorite-btn", book: @book) %>");
+}, 1000);
