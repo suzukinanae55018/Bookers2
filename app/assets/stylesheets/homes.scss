@@ -1,3 +1,16 @@
 // Place all the styles related to the homes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+.btn-pink {
+  color: #ff69b4 !important; /* テキストの色をピンクに */
+  background-color: transparent !important; /* 初期状態では背景色を透明に */
+  border-color: #ff69b4 !important; /* ボーダーの色をピンクに */
+  box-shadow: 3px 3px 5px #ff69b4 !important; /* ピンクのドロップシャドウを下と右に追加 */
+}
+
+.btn-pink:hover {
+  color: #ff85c1 !important; /* ホバー時のテキスト色を少し明るいピンクに */
+  background-color: #ffe6f2 !important; /* ホバー時の背景色を薄いピンクに */
+  border-color: #ff85c1 !important; /* ホバー時のボーダー色を少し明るいピンクに */
+  box-shadow: 4px 4px 8px #ff85c1 !important; /* ホバー時に少し強調されたピンクのドロップシャドウを下と右に */
+}
