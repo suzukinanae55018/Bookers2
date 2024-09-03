@@ -15,3 +15,17 @@
   border-color: #ff85c1 !important; /* ホバー時のボーダー色を少し明るいピンクに */
   box-shadow: 4px 4px 8px #ff85c1 !important; /* ホバー時に少し強調されたピンクのドロップシャドウを下と右に */
 }
+
+.btn-skyblue {
+  color: #00ccff !important;
+  background-color: transparent !important;
+  border-color: #00ccff !important;
+  box-shadow: 3px 3px 5px #00ccff !important;
+}
+
+.btn-skyblue:hover {
+  color: #00ccff !important;
+  background-color: #afedfa !important;
+  border-color: #00ccff !important;
+  box-shadow: 4px 4px 8px #00ccff !important;
+}
