@@ -10,8 +10,8 @@
 }
 
 .btn-pink:hover {
-  color: #ff85c1 !important; /* ホバー時のテキスト色を少し明るいピンクに */
-  background-color: #ffe6f2 !important; /* ホバー時の背景色を薄いピンクに */
+  color: #ffffff !important; /* ホバー時のテキスト色を白に */
+  background-color: #ff85c1 !important; /* ホバー時の背景色をピンクに */
   border-color: #ff85c1 !important; /* ホバー時のボーダー色を少し明るいピンクに */
   box-shadow: 4px 4px 8px #ff85c1 !important; /* ホバー時に少し強調されたピンクのドロップシャドウを下と右に */
 }
@@ -24,8 +24,8 @@
 }
 
 .btn-skyblue:hover {
-  color: #00ccff !important;
-  background-color: #afedfa !important;
+  color: #ffffff !important; /* ホバー時のテキスト色を白に */
+  background-color: #00ccff !important;
   border-color: #00ccff !important;
   box-shadow: 4px 4px 8px #00ccff !important;
 }
