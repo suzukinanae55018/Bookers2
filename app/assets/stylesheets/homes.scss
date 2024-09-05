@@ -29,3 +29,17 @@
   border-color: #00ccff !important;
   box-shadow: 4px 4px 8px #00ccff !important;
 }
+
+.btn-green {
+  color: #00cc00 !important;
+  background-color: transparent !important;
+  border-color: #00cc00 !important;
+  box-shadow: 3px 3px 5px #00cc00 !important;
+}
+
+.btn-green:hover {
+  color: #ffffff !important; /* ホバー時のテキスト色を白に */
+  background-color: #00cc00 !important;
+  border-color: #00cc00 !important;
+  box-shadow: 4px 4px 8px #00cc00 !important;
+}
