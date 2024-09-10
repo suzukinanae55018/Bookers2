@@ -10,7 +10,7 @@
 }
 
 .btn-pink:hover {
-  color: #ffffff !important; /* ホバー時のテキスト色を白に */
+  color: #ffffff !important; /* ホバー時のテキスト色を白に/!importantは最優先 */
   background-color: #ff85c1 !important; /* ホバー時の背景色をピンクに */
   border-color: #ff85c1 !important; /* ホバー時のボーダー色を少し明るいピンクに */
   box-shadow: 4px 4px 8px #ffffff !important; /* ホバー時ドロップシャドウを下と右に */
