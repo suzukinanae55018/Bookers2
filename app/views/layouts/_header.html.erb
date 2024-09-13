@@ -80,11 +80,9 @@
   $("#bookers-text").hover(
     function() {
       $(this).css("position", "relative");
-      $(this).animate({left: "-10px"}, 100)
-             .animate({left: "10px"}, 100)
-             .animate({left: "-10px"}, 100)
-             .animate({left: "10px"}, 100)
-             .animate({left: "0px"}, 100);
+      $(this).animate({top: "-10px"}, 350, "swing")
+             .animate({top: "5px"}, 200, "swing")
+             .animate({top: "0px"}, 200, "swing");
     },
     function() {
       // ポインタを離したときは何もしない
