@@ -13,6 +13,7 @@
  *= require_tree .
  *= require_self
  */
+ /*いいねボタンのアニメーション*/
 .heart {
   width: 20px;
   height: 20px;
