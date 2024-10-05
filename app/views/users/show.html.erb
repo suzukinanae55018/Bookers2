@@ -123,3 +123,13 @@
     </div>
   </div>
 </div>
+<script>
+$(document).ready(function() {
+  $('.row').hide(); // 最初は要素を非表示にする
+  // 要素をふわっと表示させる処理
+  $('.row').each(function(top) {
+    // 順番にアニメーションで表示させる
+    $(this).delay(200 * top).fadeIn(800);
+  });
+});
+</script>
