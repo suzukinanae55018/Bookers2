@@ -85,29 +85,29 @@
     },
     function() {
       // ポインタを離したときは何もしない
-    }
-  );
-});
-
-$(document).ready(function() {
-  $(".nav-link").hover(
-    function() {
-      let $this = $(this);
-      // 要素に position: relative を設定
-      $this.css('position', 'relative');
-
-      // 揺らすアニメーションを再帰的に実行
-      function shake() {
-        $this.animate({ left: '-5px' }, 50)
-             .animate({ left: '5px' }, 50)
-             .animate({ left: '0px' }, 50);
       }
-      shake(); // アニメーション開始
-    },
-    function() {
-      // アニメーションを停止して位置をリセット
-      $(this).stop(true, true).css('left', '0px');
-    }
-  );
-});
+    );
+  });
+
+  $(document).ready(function() {
+    $(".nav-link").hover(
+      function() {
+        let $this = $(this);
+        // 要素に position: relative を設定
+        $this.css('position', 'relative');
+
+        // 揺らすアニメーションを再帰的に実行
+        function shake() {
+          $this.animate({ left: '-5px' }, 50)
+               .animate({ left: '5px' }, 50)
+               .animate({ left: '0px' }, 50);
+        }
+        shake(); // アニメーション開始
+      },
+      function() {
+        // アニメーションを停止して位置をリセット
+        $(this).stop(true, true).css('left', '0px');
+      }
+    );
+  });
 </script>
