@@ -13,7 +13,7 @@ class ApplicationController < ActionController::Base
     root_path
   end
   # emailを許可
-
+# プライベートと似た機能
   protected
     def configure_permitted_parameters
       devise_parameter_sanitizer.permit(:sign_up, keys: [:email])
